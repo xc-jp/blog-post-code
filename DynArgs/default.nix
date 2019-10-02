@@ -1,6 +1,7 @@
 { pkgs ? import <nixpkgs> {}}:
 
 pkgs.writeScriptBin "my-app" ''
+  #!${pkgs.runtimeShell}
   set -euo pipefail
   SECRET=''${1:-}
 
